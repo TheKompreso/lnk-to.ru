@@ -7,4 +7,7 @@
 Полная структура базы данных:
 <img src="/.github/lnk-to.ru-database.png" alt="database" />
 
-###
+### Версия кода от 2019-2020 года
+Изначально сайт был создан без фреймворка - чистый php, html, css. Тогда я только изучал веб-программирование.
+
+[github.com/TheKompreso/old-lnk-to.ru](https://github.com/TheKompreso/old-lnk-to.ru)
