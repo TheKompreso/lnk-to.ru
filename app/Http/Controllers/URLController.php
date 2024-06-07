@@ -28,35 +28,37 @@ class URLController extends Controller
         }
         abort('409');
     }
-    
+
     public function LoadArtist($artist_id)
     {
 		$artist = Artist::where('id', $artist_id)->first();
-		if($artist == null) abort('409');
+		if($artist == null) abort('404');
 		$tracks = $artist->GetTracks();
 		$links = $artist->links;
-		
+
         return view('artist', [
             'artist' => $artist,
             'tracks' => $tracks,
             'links' => $links,
+            'url' => $artist->route->url,
         ]);
     }
     public function LoadTrack($track_id)
     {
 		$track = Track::where('id', $track_id)->first();
-		if($track == null) abort('409');
+		if($track == null) abort('404');
 		$links = $track->links;
-		
+
         return view('track', [
             'track' => $track,
             'links' => $links,
+            'url' => $track->route->url,
         ]);
     }
     public function LoadLink($link_id)
     {
         $link = Link::where('id', $link_id)->first();
-		if($link == null) abort('409');
+		if($link == null) abort('404');
 		return redirect()->away('https://'.$link->url);
     }
 }
