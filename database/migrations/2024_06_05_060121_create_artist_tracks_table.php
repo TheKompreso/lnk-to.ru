@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('artist_tracks', function (Blueprint $table) {
-            $table->id();
             $table->integer('artist_id');
             $table->integer('track_id');
+            $table->primary(['artist_id', 'track_id']);
             $table->date('release_date');
         });
     }

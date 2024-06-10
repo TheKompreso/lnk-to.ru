@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('artist_links', function (Blueprint $table) {
             $table->id();
-            $table->integer('artist_id');
+            $table->integer('artist_id')->index();
             $table->text('url');
             $table->tinyInteger('place');
         });

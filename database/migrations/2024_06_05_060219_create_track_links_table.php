@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('track_links', function (Blueprint $table) {
             $table->id();
-            $table->integer('track_id');
+            $table->integer('track_id')->index();
             $table->text('url');
             $table->tinyInteger('place');
         });
